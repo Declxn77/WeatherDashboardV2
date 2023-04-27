@@ -137,14 +137,14 @@ function getForecastApi(){
     event.preventDefault();
     
 
-    var searchInputVal = document.getElementById('search-location-1').value;
+    var searchInputVal = document.getElementById('GeoLocation1').value;
   
     localStorage.setItem('cityName', searchInputVal);
     setCityValue();
     getCoordinatesApi(searchInputVal);
     });
     
-    var ul = document.getElementById('city-search-list');
+    var ul = document.getElementById('currentGeoList');
     ul.onclick = function(event) {
 
     var target = event.target.innerHTML;
