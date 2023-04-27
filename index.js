@@ -13,6 +13,7 @@ var buttonSubmit = document.getElementById('searchButton');
 var currentWeather = document.getElementById('currentWeather');
 var fiveDayWeather = docuement.getElementById('fiveDayWeather');
 
+
 function getCoordinatesApi(searchValue){
     
     city = searchValue;
@@ -32,9 +33,9 @@ function getCoordinatesApi(searchValue){
 
     geoLong = data[0].lon;
 
-    todayForecast.textContent = '';
+    currentWeather.textContent = '';
 
-    weatherForecast.textContent = '';
+    fiveDayWeather.textContent = '';
     getForecastApi();
     })
 }
@@ -86,7 +87,7 @@ function getForecastApi(){
     bodyContentEl1.innerHTML += '<strong>Humidity:</strong>' + todayHumidity + " \u0025 " + '</br>';
    
     resultBody1.append(todayDateEl, todayImg, bodyContentEl1); 
-    todayForecast.append(resultCard1); 
+    currentWeather.append(resultCard1); 
     
     for(var i = 1; i < data.list.length; i++){
     var newdate = data.list[i].dt_txt.split(" ");
@@ -127,7 +128,7 @@ function getForecastApi(){
     bodyContentEl.innerHTML += '<strong>Wind:</strong>' + wind + " MPH " + '</br>';
     bodyContentEl.innerHTML += '<strong>Humidity:</strong>' + humidity + " \u0025 " + '</br>';
     resultBody.append(dateEl, img, bodyContentEl);
-    weatherForecast.append(resultCard); 
+    fiveDayWeather.append(resultCard); 
     }
     }
     })
